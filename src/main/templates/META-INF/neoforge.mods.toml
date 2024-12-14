@@ -1,0 +1,30 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+issueTrackerURL = "${mod_issue_tracker}"
+license = "${mod_license}"
+
+[[mods]]
+    modId = "${mod_id}"
+    version = "${mod_version}"
+    displayName = "${mod_name}"
+    description = '''${mod_description}'''
+    authors = "${mod_author}"
+    logoFile = "assets/${mod_id}/icon.png"
+
+[[dependencies."${mod_id}"]]
+    modId = "neoforge"
+    type = "required"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "[${minecraft_version},)"
+
+[[dependencies."${mod_id}"]]
+    modId = "yacl"
+    versionRange = "[${yacl_version},)"
+    mandatory = true
+    side = "CLIENT"
+    ordering = "NONE"

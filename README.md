@@ -1,6 +1,6 @@
 # PinkFont
 PinkFont is a Minecraft mod that allows you to tweak the color of the rendered text!
-![image]()
+![image](https://github.com/RaydanOMGr/PinkFont/blob/screenshots/main_menu.webp?raw=true)
 
 ## Usage
 To install the mod, all you need is to drop the jar for your version of Minecraft into the `mods` folder.
@@ -12,20 +12,18 @@ You can configure the color of the text yourself using two ways:
 Install the [Mod Menu](https://modrinth.com/mod/modmenu/) mod by putting it into the `mods` folder, as you would with any other mod.
 
 After installing the mod, once you are in the game, you will notice that a new button labeled "Mods" appeared on the main menu.
-![image]()
+![image](https://github.com/RaydanOMGr/PinkFont/blob/screenshots/mods_button.webp?raw=true)
 
 If you press the button, a menu that lists all your mods will open, looking something like this:
-![image]()
+![image](https://github.com/RaydanOMGr/PinkFont/blob/screenshots/modmenu.webp?raw=true)
 
 Hovering over the PinkFont entry will allow you to open the configuration menu for it
-![image]()
+![image](https://github.com/RaydanOMGr/PinkFont/blob/screenshots/hover.webp?raw=true)
 
 The configuration menu lets you change 3 different numeric values using sliders, those values being:
-- Cyan 
-- Magenta
-- Yellow
+![Cyan, Magenta and Yellow](https://github.com/RaydanOMGr/PinkFont/blob/screenshots/pinkfont_settings.webp?raw=true)
 
-To the average user, RGB is likely more familiar, but PinkFont uses CMY as it subtracts from white instead of adding to black.
+To the average user, RGB (Red, Green, and Blue) is likely more familiar, but PinkFont uses CMY (Cyan, Magenta, and Yellow) as it subtracts from white instead of adding to black.
 If all values are set to 0, all text will keep its original color. If all values are set to 1, all text becomes black.
 
 ### Config file

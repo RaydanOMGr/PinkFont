@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "pinkfont",
+  "version": "${version}",
+  "name": "PinkFont",
+  "description": "Allows you to change the color of text in Minecraft!",
+  "authors": [
+    "AndreasMelone"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/pinkfont/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.andreasmelone.pinkfont.PinkFont"
+    ],
+    "modmenu": [
+      "me.andreasmelone.pinkfont.config.ModMenuAdapter"
+    ]
+  },
+  "mixins": [
+    "pinkfont.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "*",
+    "yet_another_config_lib_v3": ">=3.6.1"
+  }
+}

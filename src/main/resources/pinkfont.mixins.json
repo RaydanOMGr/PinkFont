@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.andreasmelone.pinkfont.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "BakedGlyphMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

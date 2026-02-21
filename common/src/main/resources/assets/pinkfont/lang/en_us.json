@@ -1,6 +1,30 @@
 {
-  "config_category.pinkfont.colors": "PinkFont Colors",
-  "config_option.pinkfont.cyan": "Cyan",
-  "config_option.pinkfont.magenta": "Magenta",
-  "config_option.pinkfont.yellow": "Yellow"
+  "config_category.pinkfont.colors": "Colors",
+  "config_category.pinkfont.presets": "Presets",
+
+  "config_option.pinkfont.color_gradient": "Gradient",
+
+  "config_option.pinkfont.color_mode": "Color mode",
+  "config_description.pinkfont.color_mode": "Changes how the colors are applied to text.\nSince text by default already has a color, most of the time it's either white or black, it is reasonable not to apply colors naively by directly overwriting it.\nDifferent color modes interact with the original color different, choose to your liking.",
+
+  "config_option.pinkfont.gradient_duration": "Duration",
+  "config_description.pinkfont.gradient_duration": "The amount of time it takes to transition from one color to another",
+
+  "config_option.pinkfont.gradient_colors": "Gradient colors",
+  "config_description.pinkfont.gradient_colors": "A list of colors to swap between.\nTo disable the mod, leave this list empty.\nTo have text stay a constant color, keep a single color in the list.",
+
+  "config_button.pinkfont.rainbow": "Rainbow",
+  "config_description.pinkfont.rainbow": "This preset makes all text smoothly transition between the colors of the rainbow!",
+
+  "color_mode.pinkfont.subtract": "Subtract",
+  "color_mode.pinkfont.set": "Set",
+  "color_mode.pinkfont.set_keep_brightness": "Set (Keep brightness)",
+
+  "gui.pinkfont.apply": "Apply",
+  "config_option.pinkfont.brighten_dark": "Brighten dark text",
+  "config_description.pinkfont.brighten_dark": "When this is toggled on, any text that has a color with a brightness lower than the minimal brightness, will have its brightness set to the minimal brightness.",
+  "config_option.pinkfont.min_brightness": "Minimal brightness",
+  "config_description.pinkfont.min_brightness": "The minimal brightness, all text will have a brightness of at least this value.",
+
+  "config_description.pinkfont.dependency": "This option requires the \"%s\" option to be toggled on."
 }

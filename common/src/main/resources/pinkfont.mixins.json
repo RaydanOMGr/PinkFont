@@ -6,7 +6,7 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [],
   "client": [
-    "BakedGlyphMixin"
+    "BakedGlyphMixin", "MinecraftAccessor"
   ],
   "server": [],
   "injectors": {

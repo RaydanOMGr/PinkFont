@@ -1,0 +1,18 @@
+package me.andreasmelone.pinkfont.neoforge;
+
+import me.andreasmelone.pinkfont.PinkFontCommon;
+import me.andreasmelone.pinkfont.config.PinkFontConfig;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+
+@Mod(PinkFontCommon.MOD_ID)
+public class PinkFontNeoForge {
+    public PinkFontNeoForge(ModContainer modContainer) {
+        PinkFontCommon.init();
+        modContainer.registerExtensionPoint(
+                IConfigScreenFactory.class,
+                (container, parent) -> PinkFontConfig.create().generateScreen(parent)
+        );
+    }
+}

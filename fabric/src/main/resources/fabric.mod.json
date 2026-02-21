@@ -1,0 +1,36 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "contact": {
+        "sources": "https://github.com/RaydanOMGr/PinkFont"
+    },
+    "license": "${license}",
+    "icon": "assets/${mod_id}/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+          "me.andreasmelone.pinkfont.fabric.PinkFontFabric"
+        ],
+        "modmenu": [
+          "me.andreasmelone.pinkfont.fabric.config.ModMenuAdapter"
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json",
+        "${mod_id}.fabric.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": "*",
+        "minecraft": "*",
+        "java": ">=${java_version}",
+        "yet_another_config_lib_v3": ">=${yacl_version}"
+    }
+}
+  

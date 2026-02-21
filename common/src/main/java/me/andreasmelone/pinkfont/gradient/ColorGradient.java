@@ -2,6 +2,7 @@ package me.andreasmelone.pinkfont.gradient;
 
 import com.google.gson.*;
 import net.minecraft.util.ARGB;
+import net.minecraft.util.Mth;
 
 public class ColorGradient {
     public static final ColorGradient RAINBOW = new ColorGradient(
@@ -23,12 +24,12 @@ public class ColorGradient {
         float maxDuration = duration * colorList.length;
         float currentTick = tick % maxDuration;
 
-        int currentColor = (int)Math.floor(currentTick / duration);
+        int currentColor = Mth.clamp((int)Math.floor(currentTick / duration), 0, this.colorList.length - 1);
 
         float segmentTime = currentTick % duration;
         float progress = segmentTime / duration;
 
-        int nextColor = (currentColor + 1) % colorList.length;
+        int nextColor = Mth.clamp((currentColor + 1) % colorList.length, 0, this.colorList.length - 1);
 
         return ARGB.lerp(progress, this.colorList[currentColor], this.colorList[nextColor]);
     }

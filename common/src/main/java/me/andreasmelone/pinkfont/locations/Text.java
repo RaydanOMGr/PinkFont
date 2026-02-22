@@ -1,4 +1,4 @@
-package me.andreasmelone.pinkfont;
+package me.andreasmelone.pinkfont.locations;
 
 import net.minecraft.network.chat.Component;
 
@@ -22,10 +22,8 @@ public class Text {
 
     public static final Component CATEGORY_PRESETS = Component.translatable("config_category.pinkfont.presets");
 
-    public static final Component BUTTON_RAINBOW = Component.translatable("config_button.pinkfont.rainbow");
-    public static final Component BUTTON_RAINBOW_DESCRIPTION = Component.translatable("config_description.pinkfont.rainbow");
-
     public static final Component GUI_APPLY = Component.translatable("gui.pinkfont.apply");
+    public static final Component GUI_CONFIRM = Component.translatable("gui.pinkfont.confirm");
 
     public static Component requires(Component dependency) {
         return Component.translatable("config_description.pinkfont.dependency", dependency).withStyle(style -> style.withBold(true));

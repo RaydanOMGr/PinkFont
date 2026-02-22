@@ -7,11 +7,11 @@ import dev.isxander.yacl3.config.v2.api.SerialEntry;
 import dev.isxander.yacl3.config.v2.api.serializer.GsonConfigSerializerBuilder;
 import dev.isxander.yacl3.gui.ValueFormatters;
 import me.andreasmelone.pinkfont.PinkFontCommon;
-import me.andreasmelone.pinkfont.Text;
+import me.andreasmelone.pinkfont.locations.Text;
 import me.andreasmelone.pinkfont.color.AwtColorHexSerializer;
 import me.andreasmelone.pinkfont.gradient.ColorGradient;
 import me.andreasmelone.pinkfont.platform.PlatformHelper;
-import me.andreasmelone.pinkfont.color.ColorUtil;
+import me.andreasmelone.pinkfont.presets.PresetManager;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
@@ -32,6 +32,13 @@ public class PinkFontConfig {
             new Color(0xFF0000FF),
             new Color(0xFF8000FF),
             new Color(0xFFFF00FF)
+    );
+    private static final List<Color> TRANS_COLORS = List.of(
+            new Color(0xFF2DC6DE),
+            new Color(0xFFFDB6FF),
+            new Color(0xFFFFFFFF),
+            new Color(0xFFFDB6FF),
+            new Color(0xFF2DC6DE)
     );
 
     public static ConfigClassHandler<PinkFontConfig> HANDLER = ConfigClassHandler.createBuilder(PinkFontConfig.class)
@@ -137,25 +144,10 @@ public class PinkFontConfig {
                                 .build())
                         .build()
                 )
-                .category(ConfigCategory.createBuilder()
-                        .name(Text.CATEGORY_PRESETS)
-                        .option(ButtonOption.createBuilder()
-                                .name(ColorUtil.rainbowify(Text.BUTTON_RAINBOW, 3))
-                                .text(Text.GUI_APPLY.copy().withStyle(style -> style.withBold(true)))
-                                .action((screen, option) -> {
-                                    getInstance().duration = 50;
-                                    durationOption.requestSet(getInstance().duration);
-
-                                    getInstance().colors = new ArrayList<>(RAINBOW_COLORS);
-                                    colorListOption.requestSet(getInstance().colors);
-
-                                    getInstance().gradientDirty = true;
-                                    HANDLER.save();
-                                })
-                                .description(OptionDescription.createBuilder()
-                                        .text(ColorUtil.rainbowify(Text.BUTTON_RAINBOW_DESCRIPTION, 10))
-                                        .build())
-                                .build())
+                .category(PresetManager.INSTANCE.populatePresetCategory((duration) -> { getInstance().setDuration(duration); durationOption.requestSet(duration); },
+                                (colorList) -> { getInstance().setColors(colorList); colorListOption.requestSet(colorList); },
+                        ConfigCategory.createBuilder()
+                        .name(Text.CATEGORY_PRESETS))
                         .build())
                 .save(HANDLER::save)
                 .build();
@@ -193,6 +185,7 @@ public class PinkFontConfig {
 
     public void setDuration(float duration) {
         this.duration = duration;
+        this.gradientDirty = true;
     }
 
     @NotNull
@@ -203,6 +196,7 @@ public class PinkFontConfig {
 
     public void setColors(@NotNull List<Color> colors) {
         this.colors = colors;
+        this.gradientDirty = true;
     }
 
     @NotNull

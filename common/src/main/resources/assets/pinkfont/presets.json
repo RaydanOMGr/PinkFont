@@ -1,0 +1,27 @@
+{
+  "rainbow": {
+    "effect": "RAINBOW",
+    "duration": 50.0,
+    "colors": [
+      "#ff0000ff",
+      "#ff5e00ff",
+      "#ffff00ff",
+      "#00ff00ff",
+      "#00ffffff",
+      "#0000ffff",
+      "#8000ffff",
+      "#ff00ffff"
+    ]
+  },
+  "trans": {
+    "effect": "TRANS",
+    "duration": 20.0,
+    "colors": [
+      "#2dc6deff",
+      "#fdb6ffff",
+      "#ffffffff",
+      "#fdb6ffff",
+      "2dc6deff"
+    ]
+  }
+}
